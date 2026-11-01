@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be Mine? 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background: #fff0f5;
+      color: #b34466;
+      overflow-x: hidden;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      transition: 0.25s ease;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .page.active {
+      display: flex;
+      animation: fadeIn 0.7s ease;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .sticker {
+      font-size: 100px;
+      margin: 15px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .yes {
+      background: #77c99a;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.08);
+      background: #5bb981;
+    }
+
+    .no {
+      background: #f5a6bd;
+      color: white;
+    }
+
+    .pink {
+      background: #ed8eaf;
+      color: white;
+    }
+
+    .card {
+      width: min(650px, 100%);
+      background: rgba(255, 255, 255, 0.75);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px #d98aa533;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .memory {
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px #d98aa522;
+    }
+
+    .memory img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .memory p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .song-card {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 20px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .vinyl {
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: repeating-radial-gradient(
+        circle,
+        #222 0px,
+        #333 3px,
+        #171717 5px,
+        #222 8px
+      );
+      display: grid;
+      place-items: center;
+      margin: auto;
+    }
+
+    .vinyl span {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ed8eaf;
+      display: grid;
+      place-items: center;
+      color: white;
+    }
+
+    .letter {
+      text-align: left;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+
+    .next {
+      margin-top: 25px;
+    }
+
+    .small {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 550px) {
+      .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .song-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE 1: THE QUESTION -->
+  <section class="page active" id="page1">
+    <div class="card">
+      <div class="sticker">🐱💗</div>
+      <h1>Will you be mine?</h1>
+      <p>I have something very special to ask you...</p>
+
+      <div class="buttons">
+        <button class="btn yes" onclick="showPage(2)">YES 💗</button>
+        <button class="btn no" id="noButton">NO</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: CONFIRMATION -->
+  <section class="page" id="page2">
+    <div class="card">
+      <div class="sticker">🥺💞</div>
+      <h1>Well... are you sure?</h1>
+      <p>Think about it one more time!</p>
+
+      <div class="buttons">
+        <button class="btn yes" onclick="showPage(3)">YES!</button>
+        <button class="btn no" onclick="showPage(1)">NO</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: CELEBRATION -->
+  <section class="page" id="page3">
+    <div class="card">
+      <div class="sticker">🥰💋</div>
+      <h1>I knew you'd say yes 💕</h1>
+      <p>You just made me the happiest person ever!</p>
+      <button class="btn pink next" onclick="showPage(4)">
+        Our memories 📸
+      </button>
+    </div>
+  </section>
+
+  <!-- PAGE 4: MEMORIES -->
+  <section class="page" id="page4">
+    <div class="card">
+      <h1>Our little memories 💗</h1>
+      <p>Every moment with you is special</p>
+
+      <div class="memory-grid">
+        <div class="memory">
+          <img src="https://placehold.co/300x300/ffd6e5/b34466?text=Photo+1"
+               alt="Our first memory">
+          <p>Our first memory</p>
+        </div>
+
+        <div class="memory">
+          <img src="https://placehold.co/300x300/ffe4ec/b34466?text=Photo+2"
+               alt="A special day">
+          <p>A special day</p>
+        </div>
+
+        <div class="memory">
+          <img src="https://placehold.co/300x300/f8c8dc/b34466?text=Photo+3"
+               alt="My favorite picture">
+          <p>My favorite picture</p>
+        </div>
+      </div>
+
+      <button class="btn pink" onclick="showPage(5)">
+        A song for us 🎵
+      </button>
+    </div>
+  </section>
+
+  <!-- PAGE 5: SONG -->
+  <section class="page" id="page5">
+    <div class="card">
+      <h1>A song that reminds me of us 🎶</h1>
+
+      <div class="song-card">
+        <div class="vinyl">
+          <span>💗</span>
+        </div>
+
+        <div>
+          <h2 id="songTitle">Our Song</h2>
+          <p id="songArtist">Your favorite artist</p>
+
+          <!-- Add your own audio file -->
+          <audio id="song" controls>
+            <source src="song.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+          </audio>
+        </div>
+      </div>
+
+      <button class="btn pink next" onclick="showPage(6)">
+        Read my letter 💌
+      </button>
+    </div>
+  </section>
+
+  <!-- PAGE 6: LETTER -->
+  <section class="page" id="page6">
+    <div class="card">
+      <h1>A little letter for you 💌</h1>
+
+      <div class="letter">
+Dear my love,
+
+I just want you to know how much you mean to me.
+
+Every day with you makes my life better.
+Your smile, your laugh, and all the little things you do
+make me fall for you more and more.
+
+I am so grateful to have you in my life.
+I love you more than words can explain.
+
+And I hope we get to make many more beautiful
+memories together.
+
+Forever yours 💗
+      </div>
+
+      <button class="btn pink next" onclick="showPage(1)">
+        Start again 💕
+      </button>
+    </div>
+  </section>
+
+  <script>
+    // Switch between pages
+    function showPage(pageNumber) {
+      document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+      });
+
+      document.getElementById("page" + pageNumber)
+        .classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    // Make the NO button run away
+    const noButton = document.getElementById("noButton");
+
+    noButton.addEventListener("mouseenter", moveNoButton);
+
+    noButton.addEventListener("touchstart", function(event) {
+      event.preventDefault();
+      moveNoButton();
+    });
+
+    function moveNoButton() {
+      const maxX = window.innerWidth - noButton.offsetWidth - 20;
+      const maxY = window.innerHeight - noButton.offsetHeight - 20;
+
+      noButton.style.position = "fixed";
+      noButton.style.left = Math.max(10, Math.random() * maxX) + "px";
+      noButton.style.top = Math.max(10, Math.random() * maxY) + "px";
+    }
+  </script>
+
+</body>
+</html>
