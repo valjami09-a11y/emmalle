@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmalle ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: #fff5f7;
+            color: #563843;
+            line-height: 1.8;
+        }
+
+        header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #ffe0e9, #fff5f7, #f9d5e0);
+        }
+
+        header h1 {
+            font-size: clamp(42px, 9vw, 75px);
+            color: #bd5477;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 550px;
+        }
+
+        .sydan {
+            font-size: 55px;
+            margin-bottom: 15px;
+            animation: syke 1.5s infinite;
+        }
+
+        @keyframes syke {
+            50% { transform: scale(1.15); }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 245, 247, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 12px #00000010;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #a63f65;
+            font-size: 14px;
+            padding: 7px 12px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #f7d4df;
+        }
+
+        section {
+            padding: 75px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #bd5477;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .esittely {
+            text-align: center;
+            font-size: 19px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .koriste {
+            text-align: center;
+            color: #d982a0;
+            font-size: 25px;
+            margin: 20px 0;
+        }
+
+        .kuvagalleria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .kuvagalleria img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px #9b52631c;
+            transition: transform 0.3s;
+        }
+
+        .kuvagalleria img:hover {
+            transform: scale(1.025);
+        }
+
+        .kirje {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px #9b52631c;
+            white-space: pre-line;
+            font-size: 17px;
+            line-height: 2;
+        }
+
+        .musiikki {
+            text-align: center;
+            background: #ffe8ef;
+            border-radius: 25px;
+            padding: 35px 20px;
+        }
+
+        .musiikki p {
+            margin-bottom: 20px;
+        }
+
+        .musiikki iframe {
+            max-width: 600px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #f9dce5;
+            color: #a63f65;
+            font-size: 17px;
+        }
+
+        @media (max-width: 600px) {
+            header { min-height: 80vh; }
+
+            nav {
+                gap: 3px;
+                padding: 10px 5px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 6px 8px;
+            }
+
+            section { padding: 55px 16px; }
+
+            h2 { font-size: 29px; }
+
+            .kuvagalleria {
+                grid-template-columns: 1fr;
+            }
+
+            .kuvagalleria img {
+                height: 300px;
+            }
+
+            .kirje {
+                padding: 22px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#etusivu">Etusivu</a>
+        <a href="#muistot">Meidän muistot</a>
+        <a href="#kirje">Kirje sinulle</a>
+        <a href="#musiikki">Musiikki</a>
+    </nav>
+
+    <header id="etusivu">
+        <div class="sydan">❤️</div>
+        <h1>Emmalle</h1>
+        <p>
+            Tein tämän pienen sivun sinulle muistuttamaan siitä,
+            kuinka paljon merkitset minulle.
+        </p>
+        <div class="koriste">♡ ♡ ♡</div>
+    </header>
+
+    <section>
+        <h2>Sinulle, rakkaani</h2>
+        <p class="esittely">
+            En ehkä aina osaa sanoa kaikkea ääneen,
+            mutta haluan että tiedät kuinka tärkeä olet minulle.
+            Tämä sivu on pieni tapa näyttää se.
+        </p>
+        <div class="koriste">♥</div>
+    </section>
+
+    <section id="muistot">
+        <h2>Meidän muistot 📸</h2>
+        <p class="esittely">
+            Jokainen kuva muistuttaa minua siitä,
+            kuinka onnellinen olen saadessani olla kanssasi.
+        </p>
+
+        <div class="kuvagalleria">
+            <img src="1.jpg" alt="Meidän muistomme 1">
+            <img src="2.jpg" alt="Meidän muistomme 2">
+            <img src="3.jpg" alt="Meidän muistomme 3">
+            <img src="4.jpg" alt="Meidän muistomme 4">
+        </div>
+    </section>
+
+    <section id="kirje">
+        <h2>Kirje sinulle ❤️</h2>
+
+        <div class="kirje">Rakkaani ❤️
+
+En oikein edes tiedä mistä aloittaisin, koska tuntuu ettei mitkään sanat tässä maailmassa riitä kertomaan kuinka paljon merkitset mulle. Jos voisin antaa sulle mahdollisuuden nähdä itsesi mun silmien kautta edes yhden sekunnin ajan niin ymmärtäisit kuinka uskomattoman tärkeä ja erityinen olet mulle.
+
+En rakasta sua pelkästään niiden hetkien takia kun kaikki on hyvin ja nauretaan yhdessä. Rakastan sua myös niinä päivinä kun on vaikeaa, kun ei löydy oikeita sanoja tai kun kaikki ei mene suunnitelmien mukaan. Haluan olla sun vierellä kaikissa niissä hetkissä. En halua olla sun elämässä vain silloin kun on helppoa vaan haluan olla se ihminen johon voit aina luottaa ja jonka luokse voit tulla ihan millaisena tahansa.
+
+Sä olet muuttanut mun elämää tavalla jota en olisi koskaan osannut kuvitella. Tavallisetkin päivät tuntuvat paremmilta kun saan jakaa ne sun kanssa. Sun viestit piristää mun päivää, sun ääni saa mut onnelliseksi ja pelkkä ajatus susta saa mut hymyilemään. En tiedä miten joku ihminen voi merkitä toiselle näin paljon mutta sä merkitset mulle enemmän kuin osaan koskaan selittää.
+
+Mä haluan kokea sun kanssa vielä niin paljon. Haluan nähdä uusia paikkoja, kokea uusia asioita, nauraa niin paljon että sattuu, tehdä tyhmiä juttuja, viettää rauhallisia iltoja ja rakentaa meille yhteisiä muistoja. Haluan nähdä sut onnellisena ja olla mukana kaikissa niissä pienissä ja suurissa asioissa jotka tekevät elämästä elämisen arvoista.
+
+En voi luvata että osaan aina tehdä kaiken oikein. En ole täydellinen enkä varmasti aina helpoin ihminen mutta voin luvata että haluan yrittää joka päivä. Haluan oppia ymmärtämään sua paremmin, kuuntelemaan sua enemmän ja näyttämään sulle teoilla kuinka paljon rakastan sua. En halua että joudut koskaan miettimään oletko mulle tärkeä koska olet enemmän kuin tärkeä.
+
+Jos saisin valita uudestaan kaikkien maailman ihmisten joukosta niin valitsisin sut uudelleen. En siksi että meidän pitäisi olla täydellisiä vaan siksi että juuri sun kanssa haluan rakentaa jotain aitoa. En etsi mitään parempaa koska mulle sä olet se ihminen jonka kanssa haluan tulevaisuuteni.
+
+Haluan vielä vuosienkin päästä katsoa sua ja olla yhtä onnellinen siitä että saan kutsua sua omakseni. Haluan että me voidaan joskus muistella tätä aikaa ja ajatella kuinka pitkälle ollaan yhdessä päästy. Haluan olla vierelläsi niin hyvinä kuin huonoinakin päivinä ja rakastaa sua myös silloin kun elämä ei ole helppoa.
+
+Kiitos että olet juuri sinä. Kiitos kaikista hetkistä, kaikesta rakkaudesta ja siitä että saan olla osa sun elämää.
+
+Mä rakastan sua enemmän kuin mitkään sanat pystyvät koskaan kertomaan. Ja jos yksi asia on varma niin se on se että mun sydämessä on sulle paikka jota kukaan muu ei voisi koskaan täyttää.
+
+Rakastan sua tänään, huomenna ja jokaisena päivänä sen jälkeen. ❤️</div>
+    </section>
+
+    <section id="musiikki">
+        <div class="musiikki">
+            <h2>Meidän kappale 🎵</h2>
+            <p>
+                Tämä kappale muistuttaa minua sinusta ❤️
+            </p>
+
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/2PPN1HFpVotjq7oJIqQbnx?utm_source=generator&si=02b95890b47e4ea6"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        Tehty rakkaudella Emmalle ❤️
+        <br>
+        Olet minulle todella tärkeä
+    </footer>
+
+</body>
+</html>
